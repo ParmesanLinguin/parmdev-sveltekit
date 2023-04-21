@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply bg-black
+}
+
+.navbar-transparent {
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+}
+
+.navbar-light {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.navbar-dark {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
