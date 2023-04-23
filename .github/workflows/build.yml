@@ -29,7 +29,13 @@ jobs:
         
     - run: npm ci
     - run: npm run build
-    
+
+    - name: Include necessary files
+      run: |
+        cp package.json build/package.json
+        cp start.bat build/start.bat
+        cp start.sh build/start.sh
+
     - name: Store build
       uses: actions/upload-artifact@v3
       with:
