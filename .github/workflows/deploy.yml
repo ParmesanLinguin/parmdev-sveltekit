@@ -1,0 +1,28 @@
+name: build-deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  use-build:
+    uses: ./.github/workflows/build.yml
+    
+  deploy:
+    needs: use-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+      - name: Deploy
+        uses: wangyucode/sftp-upload-action@v2.0.2
+        with:
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          localDir: "."
+          remoteDir: "/upload"

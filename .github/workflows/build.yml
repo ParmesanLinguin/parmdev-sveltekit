@@ -1,0 +1,38 @@
+name: build
+
+on:
+  workflow_call:
+  push:
+    branches-ignore:
+      - master
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - run: npm ci
+    - run: npm run build
+    
+    - name: Store build
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: ./build/
+        retention-days: 1
