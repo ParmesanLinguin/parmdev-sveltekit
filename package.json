@@ -26,6 +26,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-node": "^1.2.3",
 		"@types/lodash.throttle": "^4.1.7",
+		"dotenv": "^16.0.3",
 		"lodash.throttle": "^4.1.1"
 	}
 }
