@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "../app.css";
   import { fade } from "svelte/transition";
   import { scroll } from "../stores";
   import Container from "../components/Container.svelte";
