@@ -5,6 +5,7 @@
 
   let mobile: boolean = false;
   let hidden: boolean = true;
+  let width: number = 0;
 
   export let solidBackground: boolean = false;
   export let showTitle: boolean;
@@ -15,8 +16,9 @@
   }
 
   function resize() {
-    if (window.innerWidth < 640) { mobile = true; }
-    if (window.innerWidth >= 640) { mobile = false; hidden = true; }
+    width = window.innerWidth;
+    if (width < 640) { mobile = true; }
+    if (width >= 640) { mobile = false; hidden = true; }
   }
 
   onMount(() => resize());
@@ -29,7 +31,7 @@
 
 <div class="fixed top-0 z-50 drop-shadow-xl transition-colors duration-300 ease-in w-screen m-auto {
   solidBackground || mobile && !hidden ? "bg-white dark:!bg-[#01060f] bg-opacity-70 dark:!bg-opacity-70 [backdrop-filter:blur(10px)]" : "!bg-transparent dark:!bg-transparent"}">
-  <div class="mx-auto max-w-[1600px] w-screen px-8">
+  <div class="mx-auto max-w-[1600px] w-screen px-4">
     <div class="flex flex-row justify-end items-center h-16">
       {#if showTitle || mobile && !hidden}
         <slot name="title" />

@@ -26,7 +26,7 @@
         <Container>
           <div style="min-height: 80px; md:min-height: 100px;">
             {#if $scroll <= 30}
-              <h1 class="text-white dark:text-white m-auto pt-10 font-libre-franklin font-bold text-4xl md:text-6xl" bind:this={animatedTitle} transition:fade|local>
+              <h1 class="text-white dark:text-white m-auto pt-10 font-libre-franklin font-bold text-center text-4xl md:text-6xl" bind:this={animatedTitle} transition:fade|local>
                 Parmesan Linguine
               </h1>
             {/if}
@@ -74,20 +74,20 @@
               Interests
             </h2>
             <CardContainer>
-              <ProjectCard title="Game Development" titleClass="text-white" 
+              <ProjectCard title="Game Development" titleClass="text-white text-center" 
               detailsContainerClass="bg-slate-900 mb-2 w-full rounded-lg min-h-[3rem] flex justify-center content-center flex-wrap">
                 <ProjectCardText>
                   I've been playing video games since I learnt how to walk. More recently, I've began to appreciate how much work goes into creating them and have started to experiment with game engines, with the goal of creating my own games.
                 </ProjectCardText>
               </ProjectCard>
-              <ProjectCard title="Programming Language Design" titleClass="text-xl text-white" 
+              <ProjectCard title="Programming Language Design" titleClass="text-xl text-white text-center" 
                 detailsContainerClass="bg-slate-900 mb-2 w-full rounded-lg min-h-[3rem] flex justify-center content-center flex-wrap">
                 <ProjectCardText>
                   Having worked with a variety of languages, I've noticed the details that go into designing programming languages. I enjoy studying different languages to find their strengths and weaknesses, and have worked on
                   writing some project languages.
                 </ProjectCardText>
               </ProjectCard>
-              <ProjectCard title="Music" titleClass="text-xl text-white" 
+              <ProjectCard title="Music" titleClass="text-xl text-white text-center" 
               detailsContainerClass="bg-slate-900 mb-2 w-full rounded-lg min-h-[3rem] flex justify-center content-center flex-wrap">
                 <ProjectCardText>
                   I listen to music at pretty much every waking moment, so it's safe to say it's a big part of my life. Playing music has given me another way to express myself, and I want to use it to share my stories with others. 
